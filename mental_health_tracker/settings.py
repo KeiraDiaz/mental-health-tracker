@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)0l^qj*4!)r39^__5dn8fen7+j(zi*6&e3-5(r8t%5r18ry@29
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "http://pbp.cs.ui.ac.id/keira-diaz/mentalhealthtracker", "keira-diaz-mentalhealthtracker.pbp.cs.ui.ac.id"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main'
 ]
 
 MIDDLEWARE = [
