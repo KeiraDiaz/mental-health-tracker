@@ -10,4 +10,85 @@
   <body>
     {% block content %} {% endblock content %}
   </body>
+  <style>
+    /* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f2ff; /* Light blue background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #00509e; /* Deep blue for the main heading */
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5em;
+}
+
+h5 {
+    color: #0073e6; /* Bright blue for subheadings */
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-left: 20px;
+    color: #333;
+}
+
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #0073e6; /* Border for table */
+}
+
+th {
+    background-color: #00509e;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    background-color: #cce6ff; /* Light blue table cells */
+}
+
+button {
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    background-color: #0073e6; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00509e; /* Darker blue on hover */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Footer Section */
+h5:last-of-type {
+    text-align: center;
+    margin-top: 20px;
+    color: #0073e6;
+}
+
+  </style>
 </html>
