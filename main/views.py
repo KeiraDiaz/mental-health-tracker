@@ -1,3 +1,4 @@
+import json
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -5,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect, reverse
 from main.forms import MoodEntryForm
 from main.models import MoodEntry
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 import datetime
 from django.http import HttpResponseRedirect
@@ -133,3 +134,21 @@ def add_mood_entry_ajax(request):
     new_mood.save()
 
     return HttpResponse(b"CREATED", status=201)
+
+@csrf_exempt
+def create_mood_flutter(request):
+    if request.method == 'POST':
+
+        data = json.loads(request.body)
+        new_mood = MoodEntry.objects.create(
+            user=request.user,
+            mood=data["mood"],
+            mood_intensity=int(data["mood_intensity"]),
+            feelings=data["feelings"]
+        )
+
+        new_mood.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
